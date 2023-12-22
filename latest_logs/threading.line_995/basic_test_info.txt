@@ -1,0 +1,22 @@
+threading.py:995:SB
+--------------------------------------------------------------------
+Last Page: about:blank
+ Duration: 58.66s
+  Browser: Chrome 120.0.6099.129 / headless
+   Driver: chromedriver 120.0.6099.71
+Timestamp: 1703273454  (Unix Timestamp)
+     Date: Friday, 22 December 2023
+     Time: 10:30:54 PM  (RTZ 2 (зима), UTC+03:00)
+--------------------------------------------------------------------
+Traceback:
+  File "C:\Users\Фёдор\AppData\Local\Programs\Python\Python311\Lib\tkinter\__init__.py", line 1948, in __call__
+    return self.func(*args)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\Фёдор\AppData\Local\Programs\Python\Python311\Lib\site-packages\customtkinter\windows\widgets\core_widget_classes\ctk_base_class.py", line 188, in _update_dimensions_event
+    self._draw(no_color_updates=True)  # faster drawing without color changes
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Фёдор\AppData\Local\Programs\Python\Python311\Lib\site-packages\customtkinter\windows\widgets\ctk_button.py", line 194, in _draw
+    self._canvas.delete("background_parts")
+  File "C:\Users\Фёдор\AppData\Local\Programs\Python\Python311\Lib\tkinter\__init__.py", line 2879, in delete
+    self.tk.call((self._w, 'delete') + args)
+Exception: invalid command name ".!ctkbutton3.!ctkcanvas"

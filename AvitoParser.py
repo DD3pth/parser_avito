@@ -14,6 +14,9 @@ import threading, tkinter, time
 import webbrowser
 import configparser
 
+
+from selenium.webdriver.common.by import By
+
 from loguru import logger
 from notifiers.logging import NotificationHandler
 

@@ -7,6 +7,7 @@ from notifiers.logging import NotificationHandler
 from seleniumbase import SB
 from loguru import logger
 from locator import LocatorAvito
+from selenium.webdriver.common.by import By
 
 
 class AvitoParse:
@@ -91,6 +92,22 @@ class AvitoParse:
 
             if self.is_viewed(ads_id):
                 continue
+            
+            self.driver.open(url)
+            time.sleep(10)
+            print('Открыл страницу',url)
+            print(self.url)
+
+            temp = self.driver.find_elements(By.CLASS_NAME,"params-paramsList__item-appQw")[1]
+            print(temp)
+
+
+            self.driver.open(self.url)
+            time.sleep(10)
+            print('вернулся на главную')
+
+
+
             self.viewed_list.append(ads_id)
             data = {
                 'name': name,
@@ -132,7 +149,8 @@ class AvitoParse:
             f'Просмотров: {data.get("views", "-")}\n'
             f'Дата публикации: {data.get("date_public", "-")}\n'
             f'Продавец: {data.get("seller_name", "-")}\n'
-            f'Ссылка: {data.get("url", "-")}\n')
+            f'Ссылка: {data.get("url", "-")}\n'
+            f'Квадратура:{data.get("KVADRAT","-")}\n')
 
     def __parse_full_page(self, url: str, data: dict) -> dict:
         """Парсит для доп. информации открытое объявление на отдельной вкладке"""
@@ -235,7 +253,8 @@ class AvitoParse:
                     "Просмотров",
                     "Дата публикации",
                     "Продавец",
-                    "Адрес"
+                    "Адрес",
+                    "Квадратура"
                 ])
 
     def __get_file_title(self) -> str:
